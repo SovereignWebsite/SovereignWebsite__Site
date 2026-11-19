@@ -1,27 +1,109 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sovereign Agentic Website: hosted sites</title>
-<meta name="description" content="Where hosted sovereign websites live.">
-<style>
-:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#5d5c57;--accent:#2f6b4f;--line:#e4e1d8}
-@media (prefers-color-scheme:dark){:root{--bg:#141513;--fg:#ecebe6;--muted:#a8a69e;--accent:#7fc3a0;--line:#2c2d29}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
-main{max-width:44rem;margin:0 auto;padding:12vh 1rem 4rem}
-.mark{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
-h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;margin:.4rem 0 1rem}
-p{color:var(--muted);margin:0 0 1rem}a{color:var(--accent)}
-footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
-</style>
+<title>Sovereign Website hosting</title>
+<meta name="description" content="sovereignwebsite.site is where hosted Sovereign Agentic Websites are served, each at its own address, until their owners point their own domain at them.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-<div class="mark">Sovereign Agentic Website</div>
-<h1>Where hosted sovereign websites live.</h1>
-<p>Hosted sovereign websites are served here, each at its own address, <em>name</em>.sovereignwebsite.site, until their owners point their own domain at them.</p><p>Every site stays in a repository its owner controls, so it can move anywhere at any time.</p><p>No hosted sites yet: the first ones are on their way.</p>
-<footer>sovereignwebsite.site · Part of the <a href="https://github.com/SovereignWebsite">SovereignWebsite</a> organisation · Read why: <a href="https://newsroom.sgit.ai/articles/sovereign-agentic-website.html">Sovereign Agentic Website</a></footer>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">sovereignwebsite.site</a>
+    <nav aria-label="On this page">
+      <ul>
+        <li><a href="#how">How a site gets here</a></li>
+        <li><a href="#sites">Sites</a></li>
+        <li><a href="#moving">Moving away</a></li>
+        <li><a href="#more">Read more</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <div class="hero">
+      <p class="mark">Sovereign Agentic Website</p>
+      <h1>Where hosted sovereign websites live, until their owners take them home.</h1>
+      <p class="lede">This domain serves the hosted version of the Sovereign Agentic Website (SAW). Each hosted site gets its own address, <span class="address"><em>name</em>.sovereignwebsite.site</span>, and keeps it until its owner points their own domain at it.</p>
+      <p>It is kept apart from the brand on purpose, as GitHub keeps github.io apart from github.com. The offer lives at <a href="https://sovereignwebsite.ai">sovereignwebsite.ai</a>. The open pattern, which anyone can use without paying us, lives at <a href="https://sovereignwebsite.org">sovereignwebsite.org</a>.</p>
+    </div>
+
+    <section id="what" aria-labelledby="what-h">
+      <h2 id="what-h">What this domain is for</h2>
+      <p>A sovereign agentic website is built by agents and owned by the person it is for. It is a repository the owner controls, holding the site as plain files, its content and its schema, the instructions for the agents and the behaviour policy that limits them, with checks and a deploy that run on any host.</p>
+      <p>Anyone can run that pattern themselves. We also offer it hosted: the factory sets up the repository and the site, the agents build it, and it is served here at its own address. This domain is only the address. The site itself is always in its owner's repository.</p>
+      <p class="muted">Sovereign, here, means owning your site and being able to move it. It is not a legal or certification claim.</p>
+    </section>
+
+    <section id="how" aria-labelledby="how-h">
+      <h2 id="how-h">How a hosted site gets here</h2>
+      <p>Everything is done by CI pipelines, under an Agent Behaviour Policy that lists what each agent and each pipeline may do. Anything not listed is refused.</p>
+      <ol class="steps">
+        <li><strong>A request is a folder committed to a control repository.</strong> The request holds the site's details and the GitHub account of its owner.</li>
+        <li><strong>The plan runs on the pull request.</strong> Checks run read-only, with no secrets, and show what would be created before anything is.</li>
+        <li><strong>The apply runs on merge.</strong> The pipeline creates the site's repository, seeds the site, sets its DNS record and address, enforces HTTPS, and invites the owner's GitHub account to the repository.</li>
+        <li><strong>The owner accepts the invitation.</strong> That step stays with them. Then the hand-over is one sentence: point your Claude at this repository, and start editing.</li>
+        <li><strong>Ownership moves to the owner.</strong> Every site is expected to move into its owner's ownership within three months, sooner if they ask. For now that is a soft requirement, which may become a rule.</li>
+      </ol>
+      <div class="panel">
+        <p><strong>The repository is the owner's, and it can move anywhere.</strong> The site is static files with their history, so it serves from GitHub Pages for free or from any web host. Nothing of the site lives only with us.</p>
+      </div>
+      <p class="muted">This pipeline follows the AgentiCCells site factory, which already works this way: one of its requests went from a commit to a live, secure site with its owner's access in 55 seconds. On sovereignwebsite.site, hosted-site requests are the next stage of the SovereignWebsite factory. Read <a href="https://newsroom.sgit.ai/articles/one-commit-one-site-one-owner.html">one commit, one site, one owner</a>.</p>
+    </section>
+
+    <section id="sites" aria-labelledby="sites-h">
+      <h2 id="sites-h">Sites</h2>
+      <div class="panel">
+        <p><strong>There are no hosted sites here yet.</strong> The hosted service under the Sovereign Agentic Website name is only now being set up. When there are hosted sites, they will be listed here.</p>
+      </div>
+    </section>
+
+    <section id="moving" aria-labelledby="moving-h">
+      <h2 id="moving-h">Moving your site away</h2>
+      <p>Leaving should be easy, because the site was always yours. When you move, you take:</p>
+      <ul class="plain">
+        <li><strong>The repository, with its history.</strong> Every change ever made is a commit you keep.</li>
+        <li><strong>The files.</strong> Static files that any web host can serve.</li>
+        <li><strong>The schema.</strong> The structure of the site and its content are files in your repository, in open formats, not an export in a format someone else chose.</li>
+        <li><strong>The address.</strong> Point your own domain at the site, and the <em>name</em>.sovereignwebsite.site address is no longer needed.</li>
+      </ul>
+      <h3>Hold your domain at your own registrar</h3>
+      <p>A website you own includes its name, and the registrar is where the name is really held. We compared sixteen registrars from their own pages and, for a small business in Europe, put forward OVHcloud, Hostinger and INWX, each with its catch. Watch the renewal price, which is often far above the first year's. Read <a href="https://newsroom.sgit.ai/articles/your-own-registrar.html">your own registrar</a>.</p>
+      <p class="muted">Owning the files means you can move. It does not move them for you.</p>
+    </section>
+
+    <section id="more" aria-labelledby="more-h">
+      <h2 id="more-h">Read more</h2>
+      <div class="links">
+        <a href="https://sovereignwebsite.ai"><strong>sovereignwebsite.ai</strong><span>The offer: built by agents, owned by you.</span></a>
+        <a href="https://sovereignwebsite.org"><strong>sovereignwebsite.org</strong><span>The open pattern, free for anyone to use.</span></a>
+      </div>
+      <ul class="plain">
+        <li><a href="https://newsroom.sgit.ai/articles/sovereign-agentic-website.html">Sovereign Agentic Website</a>: the name, and why sovereign and agentic.</li>
+        <li><a href="https://newsroom.sgit.ai/articles/sovereignty-you-can-move.html">Sovereignty you can move</a>: why where your data is hosted is not sovereignty.</li>
+        <li><a href="https://newsroom.sgit.ai/articles/no-lock-in.html">No lock-in</a>: why being able to leave is the difference that matters most.</li>
+        <li><a href="https://newsroom.sgit.ai/articles/the-website-cell.html">The website cell</a>: the repository, the designs and the hand-over.</li>
+        <li><a href="https://newsroom.sgit.ai/articles/one-commit-one-site-one-owner.html">One commit, one site, one owner</a>: how a commit becomes a site with its owner.</li>
+        <li><a href="https://newsroom.sgit.ai/articles/your-own-registrar.html">Your own registrar</a>: where to hold your domain.</li>
+      </ul>
+      <p class="muted">Articles by Dinis Cruz.</p>
+    </section>
+
+  </div>
 </main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>sovereignwebsite.site · Part of the <a href="https://github.com/SovereignWebsite">SovereignWebsite</a> organisation on GitHub.</p>
+    <p>Static files only: no scripts, no cookies, no tracking, no third-party fonts.</p>
+  </div>
+</footer>
 </body>
 </html>
