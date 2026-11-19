@@ -146,3 +146,12 @@ footer.site p { margin: 0 0 0.5rem; }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+
+/* The Sovereign Website family bar: the same on every site in the family. */
+.family{font-size:.8rem;border-bottom:1px solid rgba(127,127,127,.25);background:rgba(127,127,127,.06)}
+.family ul{list-style:none;margin:0 auto;padding:.35rem 1rem;display:flex;flex-wrap:wrap;gap:.25rem .9rem;max-width:72rem}
+.family a{color:inherit;opacity:.8;text-decoration:none}
+.family a:hover,.family a:focus-visible{opacity:1;text-decoration:underline}
+.family a[aria-current="true"]{opacity:1;font-weight:600}
+.family .family-sep{margin-left:auto}
+@media (max-width:40rem){.family .family-sep{margin-left:0}}
